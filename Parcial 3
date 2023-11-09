@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main (){
+FILE *archivo;
+int x,y, word, count [50];
+
+archivo = fopen("emails.txt","a");
+
+	if (archivo==NULL){
+		perror("Error en la apertura del archivo");
+		return 1;
+	}	
+	while (!feof(archivo)){
+	
+	int start_row[656];
+	
+	for (x=0;x<50;++x){
+		
+		
+			fprintf(archivo, "The, %d\n",x);
+		}
+	}
+
+	
+	fclose(archivo);
+
+	
+return 0;
+}
