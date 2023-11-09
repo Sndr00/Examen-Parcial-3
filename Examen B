@@ -67,7 +67,6 @@ int main(){
 }
     
     fclose(file);
-    printf("\n\nTodo esta en viento en popa...\n\n\n\n");
 
     return 0;
 }
