@@ -34,8 +34,8 @@ int main(){
     printf("Suma de los 3,000 numeros: %d", count);
     
     while (!feof(file)){
-	   int startRow = 622; // Últimos tres dígitos del ID (180622)
-    int endRow = 672;
+	   int startRow = 656; // Últimos tres dígitos del ID (180622)
+    int endRow = 706;
 	int startCol = 2;
 	int endCol = 2;
 	int cellValue;
