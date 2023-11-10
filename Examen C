@@ -1,0 +1,88 @@
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <cstdlib>
+
+int main() {
+
+    std::string filename = "emails.csv";
+
+    std::ifstream file("emails.csv");
+
+
+    if (!file.is_open()) {
+        std::cerr << "Error al abrir el archivo: " << filename << std::endl;
+        return 1;
+    }
+
+s
+    int startLine = 656;
+    int endLine = 706;
+
+
+    int currentLine = 1;
+
+
+    int sumColumn2 = 0;
+    int sumColumn3 = 0;
+    int sumColumn4 = 0;
+    int sumColumn5 = 0;
+
+  
+    std::string line;
+    while (std::getline(file, line) && currentLine <= endLine) {
+        if (currentLine >= startLine) {
+         
+            std::stringstream ss(line);
+            std::string field;
+
+
+            std::getline(ss, field, ',');
+
+
+            std::getline(ss, field, ',');
+            sumColumn2 += std::atoi(field.c_str());
+
+
+            std::getline(ss, field, ',');
+            sumColumn3 += std::atoi(field.c_str());
+
+
+            std::getline(ss, field, ',');
+            sumColumn4 += std::atoi(field.c_str());
+
+
+            std::getline(ss, field, ',');
+            sumColumn5 += std::atoi(field.c_str());
+        }
+
+  
+        ++currentLine;
+    }
+
+    std::cout << "Suma Columna 2: " << sumColumn2 << std::endl;
+    std::cout << "Suma Columna 3: " << sumColumn3 << std::endl;
+    std::cout << "Suma Columna 4: " << sumColumn4 << std::endl;
+    std::cout << "Suma Columna 5: " << sumColumn5 << std::endl;
+
+    file.close();
+    
+    
+    FILE *archivo;
+	int x,y, word, count [50];
+	archivo = fopen("179656.txt","a");
+
+	if (archivo==NULL){
+		perror("Error en la apertura del archivo");
+		return 1;
+	}	
+	
+	fprintf(archivo, "The, %d\n",sumColumn2);
+	fprintf(archivo, "To, %d\n",sumColumn3);
+	fprintf(archivo, "Ect, %d\n",sumColumn4);
+	fprintf(archivo, "And, %d\n",sumColumn5);
+	
+	fclose(archivo);
+
+    return 0;
+}
